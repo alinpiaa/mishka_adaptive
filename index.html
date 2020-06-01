@@ -2,13 +2,241 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Mishka</title>
-        <link rel="stylesheet" href="/css/style.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mishka — главная</title>
+        <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="css/style.min.css">
     </head>
-    <body>
-        <div style="display: none">
+    <body class="body">
+        <div style="display: none;">
             <include src="./build/img/sprite.svg"></include>
         </div>
-        Test
+        <header class="header">
+            <nav class="header__menu menu">
+                <a class="header__logo" href="#">
+                    <img src=".">
+                </a>
+                <button class="menu__btn" type="button" aria-label="Открыть или закрыть меню"></button>
+                <ul class="menu__list menu__list-catalog">
+                    <li class="menu__item"><a href="#">Каталог товаров</a></li>
+                    <li class="menu__item"><a href="#">Вязание на заказ</a></li>
+                </ul>
+                <ul class="menu__list menu__list-actions">
+                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
+                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
+                </ul>
+                <ul class="menu__list menu__list-actions">
+                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
+                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
+                </ul>
+                <ul class="menu__list menu__list-new">
+                    <li class="menu__item"><a href="#">Новые поступления</a></li>
+                    <li class="menu__item"><a href="#">Распродажа</a></li>
+                </ul>
+                <ul class="menu__list menu__list-delivery">
+                    <li class="menu__item"><a href="#">Бесплатная доставка по России</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <h1 class="main__title visually-hidden">
+                Интернет-магазин «Mishka» — главная страница
+            </h1>
+            <section class="products">
+                <header class="products__header">
+                    <h2 class="products__title title">
+                        Милые штуки ручной работы для дома
+                    </h2>
+                </header>
+                <ul class="products__categories-list">
+                    <li class="products__category-item">
+                        <a class="products__category-link" href="#">
+                            <p class="products__category-name">
+                                Предметы интерьера
+                            </p>
+                        </a>
+                    </li>
+                    <li class="products__category-item">
+                        <a class="products__category-link" href="#"> 
+                            <p class="products__category-name">
+                                Детские игрушки
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="top-sales">
+                <header class="top-sales__header">
+                    <h2 class="top-sales__title title">
+                        Вязаные корзинки
+                    </h2>
+                    <b class="top-sales__promo-text">Товар недели</b>
+                </header>
+                <p class="top-sales__description">
+                    Экологически чистая пряжа,<br>
+                    ручная работа. Доступны в шести<br>
+                    расцветках и трех размерах.
+                </p>
+                <table class="top-sales__specs-table">
+                    <tr сlass="top-sales__spec-table-item">
+                        <th сlass="top-sales__spec-name">Цвет</th>
+                        <td сlass="top-sales__spec-value">«Тиффани»/серый</td>
+                    </tr>
+                    <tr сlass="top-sales__spec-table-item">
+                        <th сlass="top-sales__spec-name">Диаметр</th>
+                        <td сlass="top-sales__spec-value">25 см</td>
+                    </tr>
+                    <tr сlass="top-sales__spec-table-item">
+                        <th сlass="top-sales__spec-name">Высота</th>
+                        <td сlass="top-sales__spec-value">15 см</td>
+                    </tr>
+                </table>
+                <img src="." class="top-sales__picture">
+                <b class="top-sales__price">
+                    Цена: 900 руб.
+                </b>
+                <a class="top-sales__purchase-link button">Заказать</a> 
+            </section>
+            <section class="about-us">
+                <header class="about-us__header">
+                    <h2 class="about-us__title title">Коротко о нас:</h2>
+                    <ul class="about-us__list">
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Экологически чистые материалы
+                            </p>
+                        </li>
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Скандинавский стиль по российской цене
+                            </p>
+                        </li>
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Увеличивает лайки на фотографиях
+                            </p> 
+                        </li>
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Связано вручную с любовью и умилением
+                            </p>
+                        </li>
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Поддержка отечественного производителя
+                            </p>
+                        </li>
+                        <li class="about-us__item">
+                            <p class="about-us__text">
+                                Поставляется в подарочной упаковке
+                            </p>
+                        </li>
+                    </ul>
+                </header>
+            </section>
+            <section class="reviews">
+                <header class="reviews__header">
+                    <h2 class="reviews__title title">
+                        Отзывы
+                    </h2>
+                </header>
+                <div class="reviews__slider slider">
+                    <blockquote class="reviews__item slider__item">
+                        <p class="reviews__item-text">
+                            Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!
+                        </p>
+                        <cite class="reviews__item-author">
+                            <b class="reviews__item-author-name">
+                                Анастасия Красильникова
+                            </b>
+                            <p class="reviews__item-author-email">
+                                @misssssiskras
+                            </p>
+                        </cite>
+                    </blockquote>
+                    <p class="reviews__toggles slider__toggles">
+                        <button class="slider__toggle" type="button" aria-label="Предыдущий отзыв">.</button>
+                        <button class="slider__toggle" type="button" aria-label="Следующий отзыв">.</button>
+                    </p>
+                </div>
+                <a href="#" class="review__write-link button">Написать</a>
+            </section>
+            <section class="contacts">
+                <header class="contacts__header">
+                    <h2 class="contacts__title title">
+                        Контакты
+                    </h2>
+                </header>
+                <table class="contacts__table">
+                    <tr сlass="contacts__table-item">
+                        <th сlass="contacts__table-item-name">e-mail</th>
+                        <td сlass="top-sales__spec-value">info@mimimishkashop.ru</td>
+                    </tr>
+                    <tr сlass="contacts__table-item">
+                        <th сlass="contacts__table-item-name">адрес</th>
+                        <td сlass="contacts__table-item-value">
+                            г. Санкт-Петербург,<br>
+                            ул. Большая Конюшенная,<br> 
+                            д. 19/8, офис 101
+                        </td>
+                    </tr>
+                </table>
+                <div class="contacts__map">
+                    <!-- Здесь будет карта -->
+                    <img src="." class="contacts__map-picture">
+                </div>
+                <a href="#" class="contacts__write-to-us button">
+                    Напишите нам
+                </a>
+            </section>
+        </main>
+        <footer class="footer">
+            <a href="#" class="footer__logo-link">
+                <img src="." class="footer__logo">
+            </a>
+            <ul class="footer__social-list">
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_instagram" aria-label="Instagram">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_facebook" aria-label="Facebook">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_twitter" aria-label="Twitter">
+                        <img src='.'>
+                    </a>
+                </li>
+            </ul>
+            <div class="footer__copyright">
+                <b class="footer__copyright-text">Разработано</b>
+                <a href="#" class="footer__copyright-link">
+                    <img src="." class="footer__copyright-logo">
+                </a>
+            </div>
+        </footer>
+        <section class="add-to-cart modal">
+            <header class="modal__header">
+                <h3 class="modal__title">
+                    Добавить в корзину
+                </h3>
+            </header>
+            <form class="modal__form-sizes">
+                <p class="modal__form-text">
+                    Выберите размер:
+                </p>
+                <input class="modal__input visually-hidden" type="radio" id="size_s" name="size" value="S" checked>
+                <label for="size_s">S</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_m" name="size" value="M">
+                <label for="size_m">M</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_l" name="size" value="L">
+                <label for="size_l">L</label>
+                <button class="modal__submit-btn button" type="submit">Добавить</button>
+            </form>
+        </section>
     </body>
 </html>
