@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mishka — форма заказа</title>
+        <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+    <body class="body">
+        <div style="display: none;">
+            <include src="./build/img/sprite.svg"></include>
+        </div>
+        <header class="header">
+            <nav class="header__menu menu">
+                <a class="header__logo" href="index.html">
+                    <img src=".">
+                </a>
+                <button class="menu__btn" type="button" aria-label="Открыть или закрыть меню"></button>
+                <ul class="menu__list menu__list-catalog">
+                    <li class="menu__item"><a href="catalog.html">Каталог товаров</a></li>
+                    <li class="menu__item"><a>Вязание на заказ</a></li>
+                </ul>
+                <ul class="menu__list menu__list-actions">
+                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
+                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
+                </ul>
+                <ul class="menu__list menu__list-new">
+                    <li class="menu__item"><a href="#">Новые поступления</a></li>
+                    <li class="menu__item"><a href="#">Распродажа</a></li>
+                </ul>
+                <ul class="menu__list menu__list-delivery">
+                    <li class="menu__item"><a href="#">Бесплатная доставка по России</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <header class="main__header">
+                <h1 class="main__title">
+                    Вязание на заказ
+                </h1>
+            </header>
+            <section class="order">
+                <p class="order__text">
+                    Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.
+                </p>
+                <form class="order__form">
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">Тип</legend>
+                        <input class="order__input visually-hidden" type="radio" name="type" id="accessory" value="accessory" checked>
+                        <label for="accessory">Аксессуар для интерьера</label>
+                        <input class="order__input visually-hidden" type="radio" name="type" id="toy" value="toy">
+                        <label for="toy">Детская игрушка</label>
+                    </fieldset>
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">Цвет</legend>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="white" value="white" checked>
+                        <label for="white">Белый</label>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="gray" value="gray" checked>
+                        <label for="gray">Серый</label>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="tiffany" value="tiffany">
+                        <label for="tiffany">«Тиффани»</label>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="black" value="black">
+                        <label for="black">Черный</label>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="pink" value="pink">
+                        <label for="pink">Розовый</label>
+                        <input class="order__input visually-hidden" type="checkbox" name="color" id="orange" value="orange">
+                        <label for="orange">Оранжевый</label>
+                    </fieldset>
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">ФИО</legend>
+                        <label for="order-name">Имя:</label>
+                        <input class="order__input" type="text" id="order-name" placeholder="Введите ваше имя*" required>
+                        <label for="order-surname">Фамилия:</label>
+                        <input class="order__input" type="text" id="order-surname" placeholder="Укажите фамилию*" required>
+                        <label for="order-patronymic">Отчество:</label>
+                        <input class="order__input" type="text" id="order-patronymic" placeholder="Отчество, если желаете">
+                    </fieldset>
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">Тел</legend>
+                        <input id="order-tel" class="order__field" type="tel" placeholder="+7 ХХХ ХХ ХХ*" required>
+                    </fieldset>
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">e-mail</legend>
+                        <input id="order-email" class="order__field" type="email" placeholder="Ваш Email*" required>
+                    </fieldset>
+                    <fieldset class="order__field">
+                        <legend class="order__field-title">Доп</legend>
+                        <textarea id="order-user-text" class="order__field" placeholder="Опишите все ваши пожелания к заказу"></textarea>
+                    </fieldset>
+                    <small class="order__meta-info">
+                        *Поля обязательны для заполнения
+                    </small>
+                    <button type="submit" class="order__submit-btn button">
+                        Отправить заказ
+                    </button>
+                </form>
+            </section>
+        </main>
+        <footer class="footer">
+            <a href="index.html" class="footer__logo-link">
+                <img src="." class="footer__logo">
+            </a>
+            <ul class="footer__social-list">
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_instagram" aria-label="Instagram">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_facebook" aria-label="Facebook">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_twitter" aria-label="Twitter">
+                        <img src='.'>
+                    </a>
+                </li>
+            </ul>
+            <div class="footer__copyright">
+                <b class="footer__copyright-text">Разработано</b>
+                <a href="#" class="footer__copyright-link">
+                    <img src="." class="footer__copyright-logo">
+                </a>
+            </div>
+        </footer>
+        <section class="add-to-cart modal">
+            <header class="modal__header">
+                <h3 class="modal__title">
+                    Добавить в корзину
+                </h3>
+            </header>
+            <form class="modal__form-sizes">
+                <p class="modal__form-text">
+                    Выберите размер:
+                </p>
+                <input class="modal__input visually-hidden" type="radio" id="size_s" name="size" value="S" checked>
+                <label for="size_s">S</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_m" name="size" value="M">
+                <label for="size_m">M</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_l" name="size" value="L">
+                <label for="size_l">L</label>
+                <button class="modal__submit-btn button" type="submit">Добавить</button>
+            </form>
+        </section>
+    </body>
+</html>
