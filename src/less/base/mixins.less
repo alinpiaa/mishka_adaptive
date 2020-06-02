@@ -1,0 +1,68 @@
+// TODO: .inner
+
+.reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.icon-default-opacity {
+    opacity: 0.2;
+}
+
+.active-opacity {
+    opacity: 0.3;
+}
+
+.hover-opacity {
+    opacity: 0.6;
+}
+
+.main-title {
+    color: @text-main;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 30px;
+    text-align: center;
+
+    @media (min-width: @tablet) {
+        font-size: 43px;
+        line-height: 50px;
+    }
+
+    @media (min-width: @desktop) {
+        font-size: 53px;
+        line-height: 57px;
+    }
+}
+
+.transition {
+    transition: all 0.2s ease;
+}
+
+.button-style {
+    background-color: transparent;
+    border: 2px solid @background-ghost-button;
+    border-radius: 0;
+    color: @text-small;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    // TODO: proper padding
+    text-transform: uppercase;
+
+    .transition();
+
+    &:hover {
+        background-color: @background-ghost-button;
+        color: @white;
+    }
+
+    &:focus,
+    &:active {
+        background-color: @background-ghost-button;
+        color: rgba(255, 255, 255, 0.3);
+    }
+}
