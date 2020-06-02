@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mishka — каталог</title>
+        <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2">
+        <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2">
+        <link rel="stylesheet" href="css/style.min.css">
+    </head>
+    <body class="body">
+        <div style="display: none;">
+            <include src="./build/img/sprite.svg"></include>
+        </div>
+        <header class="header">
+            <nav class="header__menu menu">
+                <a class="header__logo" href="index.html">
+                    <img src=".">
+                </a>
+                <button class="menu__btn" type="button" aria-label="Открыть или закрыть меню"></button>
+                <ul class="menu__list menu__list-catalog">
+                    <li class="menu__item"><a>Каталог товаров</a></li>
+                    <li class="menu__item"><a href="form.html">Вязание на заказ</a></li>
+                </ul>
+                <ul class="menu__list menu__list-actions">
+                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
+                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
+                </ul>
+                <ul class="menu__list menu__list-actions">
+                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
+                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
+                </ul>
+                <ul class="menu__list menu__list-new">
+                    <li class="menu__item"><a href="#">Новые поступления</a></li>
+                    <li class="menu__item"><a href="#">Распродажа</a></li>
+                </ul>
+                <ul class="menu__list menu__list-delivery">
+                    <li class="menu__item"><a href="#">Бесплатная доставка по России</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main">
+            <header class="main__header">
+                <h1 class="main__title">
+                    Каталог товаров
+                </h1>
+            </header>
+            <section class="catalog">
+                <ul class="catalog__list">
+                    <li class="catalog__item">
+                        <a class="catalog__item-link">
+                            <img src="." class="catalog__item-img">
+                            <b class="catalog__item-title">
+                                Зайчик-попрыгайчик
+                            </b>
+                            <p class="catalog__item-description">
+                                Рост 30 см, вес 200 г
+                            </p>
+                            <div class="catalog__item-purchase">
+                                <b class="catalog__item-price">
+                                    1 200 руб.
+                                </b>
+                                <button type="button" class="catalog__item-add-to-cart modal-add" aria-label="Добавить в корзину"></button>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="catalog__item">
+                        <a class="catalog__item-link">
+                            <img src="." class="catalog__item-img">
+                            <b class="catalog__item-title">
+                                Корзинка для белья
+                            </b>
+                            <p class="catalog__item-description">
+                                Диаметр 15 см, высота 10 см
+                            </p>
+                            <div class="catalog__item-purchase">
+                                <b class="catalog__item-price">
+                                    690 руб.
+                                </b>
+                                <button type="button" class="catalog__item-add-to-cart modal-add" aria-label="Добавить в корзину"></button>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="catalog__item">
+                        <a class="catalog__item-link">
+                            <img src="." class="catalog__item-img">
+                            <b class="catalog__item-title">
+                                Большая корзинка для игрушек
+                            </b>
+                            <p class="catalog__item-description">
+                                Диаметр 30 см, высота 30 см
+                            </p>
+                            <div class="catalog__item-purchase">
+                                <b class="catalog__item-price">
+                                    1 500 руб.
+                                </b>
+                                <button type="button" class="catalog__item-add-to-cart modal-add" aria-label="Добавить в корзину"></button>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="catalog__item catalog__item--video">
+                        <b class="catalog__item-title">
+                            Процесс производства
+                        </b>
+                        <img src="." class="catalog__item-image">
+                        <p class="catalog__item-description">
+                            По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.
+                        </p>
+                        <a href="form.html" class="catalog__order-button button">Сделать заказ</a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <a href="#" class="footer__logo-link">
+                <img src="." class="footer__logo">
+            </a>
+            <ul class="footer__social-list">
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_instagram" aria-label="Instagram">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_facebook" aria-label="Facebook">
+                        <img src='.'>
+                    </a>
+                </li>
+                <li class="footer__social-item">
+                    <a href="#" class="footer__social-link footer__social-link_twitter" aria-label="Twitter">
+                        <img src='.'>
+                    </a>
+                </li>
+            </ul>
+            <div class="footer__copyright">
+                <b class="footer__copyright-text">Разработано</b>
+                <a href="#" class="footer__copyright-link">
+                    <img src="." class="footer__copyright-logo">
+                </a>
+            </div>
+        </footer>
+        <section class="add-to-cart modal">
+            <header class="modal__header">
+                <h3 class="modal__title">
+                    Добавить в корзину
+                </h3>
+            </header>
+            <form class="modal__form-sizes">
+                <p class="modal__form-text">
+                    Выберите размер:
+                </p>
+                <input class="modal__input visually-hidden" type="radio" id="size_s" name="size" value="S" checked>
+                <label for="size_s">S</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_m" name="size" value="M">
+                <label for="size_m">M</label>
+                <input class="modal__input visually-hidden" type="radio" id="size_l" name="size" value="L">
+                <label for="size_l">L</label>
+                <button class="modal__submit-btn button" type="submit">Добавить</button>
+            </form>
+        </section>
+    </body>
+</html>
