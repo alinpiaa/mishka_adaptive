@@ -1,7 +1,25 @@
-@test_color: #24a58f;
-
-.header {
-    color: @test_color;
+.header__menu-item {
+    position: relative;
     display: flex;
-    font-size: 29px;
+    justify-content: center;
+    padding: 22px 0;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 79px;
+    border: 1px solid @menu-item-border-color;
+
+    .inner();
+}
+
+// TODO: consider to move to separate file for block logo
+
+.header__logo {    
+    &:hover {
+        opacity: @hover-opacity;
+    }
+
+    &:focus,
+    &:active {
+        opacity: @active-opacity;
+    }
 }
