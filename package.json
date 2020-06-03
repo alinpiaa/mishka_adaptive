@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "gulp build",
+    "clean": "gulp clean",
     "lint:styles": "stylelint src/less/*.less",
     "lint:js": "eslint src/js/*.js",
     "lint": "npm-run-all --parallel lint:*",

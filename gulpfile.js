@@ -20,7 +20,7 @@ const server = browserSync.create();
 const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
 function html() {
-    return src('./*.html')
+    return src('src/*.html')
         .pipe(posthtml([
             include()
         ]))
@@ -118,7 +118,7 @@ function serve() {
         ui: false
     });
 
-    watch('./*.html', series(html, refresh));
+    watch('src/*.html', series(html, refresh));
     watch('src/less/**/*.less', css);
     watch('src/js/**/*.js', series(js, refresh));
     watch('src/fonts/**/*.{woff,woff2}', series(fonts, refresh));
@@ -130,5 +130,6 @@ function serve() {
 const build = series(clean, svgSprite, html, parallel(css, js, fonts, images, toWebp));
 const start = series(build, serve);
 
+exports.clean = clean;
 exports.build = build;
 exports.start = start;
