@@ -1,6 +1,129 @@
-@some_color: #25e;
+@footer-separator-color: #e5e5e5;
 
 .footer {
     background-color: @background-accent;
     display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+
+    .inner();
+}
+
+.footer__social-list {
+    .reset-list();
+
+    align-items: center;
+    border-bottom: 1px solid @footer-separator-color;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12px;
+}
+
+.footer__social-item {
+    margin-right: 41px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.footer__copyright {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.footer__copyright-link {
+    align-items: center;
+    color: @text-main;
+    display: flex;
+    text-decoration: none;
+}
+
+.footer__copyright-text {
+    font-size: 19px;
+    line-height: 1.1;
+    margin-right: 18px;
+}
+
+.footer__social-icon {
+    fill: @icon-default;
+}
+
+.footer__copyright-icon {
+    fill: @icon-accent;
+}
+
+.footer__social-link:hover {
+    .footer__social-icon {
+        fill: @icon-footer-accent;
+    }
+}
+
+.footer__social-link:focus,
+.footer__social-link:active {
+    .footer__social-icon {
+        fill: @icon-footer-accent;
+        opacity: @active-opacity;
+    }
+}
+
+.footer__copyright-link:hover {
+    .footer__copyright-icon {
+        fill: @icon-footer-accent;
+    }
+}
+
+.footer__copyright-link:focus,
+.footer__copyright-link:active {
+    .footer__copyright-icon {
+        fill: @icon-footer-accent;
+        opacity: @active-opacity;
+    }
+
+    .footer__copyright-text {
+        opacity: @active-opacity;
+    }
+}
+
+.footer__logo {
+    display: none;
+}
+
+@media (min-width: @tablet) {
+    .footer {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    .footer__social-list {
+        border: none;
+        padding: 0;
+    }
+
+    .footer__logo {
+        display: block;
+        fill: @icon-default;
+    }
+
+    .footer__logo:hover {
+        .footer__logo-icon {
+            fill: @icon-footer-accent;
+        }
+    }
+
+    .footer__logo:focus,
+    .footer__logo:active {
+        .footer__logo-icon {
+            fill: @icon-footer-accent;
+            opacity: @active-opacity;
+        }
+    }
+
+    .footer__copyright {
+        margin: 0;
+    }
 }

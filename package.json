@@ -36,8 +36,8 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
-    "lint:styles": "stylelint src/less/*.less",
-    "lint:js": "eslint src/js/*.js",
+    "lint:styles": "stylelint src/less/**/*.less",
+    "lint:js": "eslint src/js/**/*.js",
     "lint": "npm-run-all --parallel lint:*",
     "start": "gulp start",
     "test": "echo \"Error: no test specified\" && exit 1"

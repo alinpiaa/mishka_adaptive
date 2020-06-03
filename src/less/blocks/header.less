@@ -1,19 +1,18 @@
 .header__menu-item {
-    position: relative;
+    border: 1px solid @menu-item-border-color;
+    box-sizing: border-box;
     display: flex;
+    height: 79px;
     justify-content: center;
     padding: 22px 0;
-    box-sizing: border-box;
-    justify-content: center;
-    height: 79px;
-    border: 1px solid @menu-item-border-color;
+    position: relative;
 
     .inner();
 }
 
 // TODO: consider to move to separate file for block logo
 
-.header__logo {    
+.header__logo {
     &:hover {
         opacity: @hover-opacity;
     }
