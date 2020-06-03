@@ -1,5 +1,3 @@
-function menu() {
+function menu() { // eslint-disable-line
     console.log('some test menu code');
 }
-
-exports.default = menu;
