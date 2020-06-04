@@ -119,18 +119,97 @@
     }
 }
 
-@media (min-width: @tablet) {
-    .products {
-        background-image: url('../img/hero-tablet@1x.jpg');
-    }
+.products__bottom-separator {
+    display: none;
+}
 
+@media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+    .products {
+        background-image: url('../img/hero-mobile@2x.jpg');
+        background-size: 90vh;
+    }
+}
+
+@media (min-width: @tablet) {
     .products__text-separator_optional {
         display: none;
+    }
+
+    .products {
+        background-image: url('../img/hero-tablet@1x.jpg');
+        background-position: center top;
+        padding-top: 156px;
+    }
+
+    .products__title {
+        margin: 0 0 370px 0;
+    }
+
+    .products__categories-list {
+        .inner();
+
+        display: flex;
+    }
+
+    .products__category-item {
+        flex-grow: 1;
+    }
+
+    .products__category-link {
+        padding: 31px 34px;
+
+        &:hover {
+            transform: translateY(-5px);
+
+            .products__category-name {
+                transform: translateY(-5px);
+            }
+
+            .products__category-item_toy .products__category-icon {
+                transform: translateY(-5px);
+            }
+
+            .products__category-item_interior .products__category-icon {
+                transform: translateX(-10px) translateY(-5px);
+            }
+        }
+    }
+
+    .products__bottom-separator {
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+
+    .products__bottom-separator-icon {
+        height: 22px;
+        left: 50%;
+        margin-left: -575px;
+        position: absolute;
+        top: -19px;
+    }
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        .products {
+            background-image: url('../img/hero-tablet@2x.jpg');
+            background-size: cover;
+        }
     }
 }
 
 @media (min-width: @desktop) {
     .products {
         background-image: url('../img/hero-desktop@1x.jpg');
+    }
+
+    .products__title {
+        margin: 0 0 354px 0;
+    }
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+        .products {
+            background-image: url('../img/hero-desktop@2x.jpg');
+            background-size: cover;
+        }
     }
 }

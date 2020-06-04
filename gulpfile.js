@@ -115,6 +115,7 @@ function serve() {
         notify: false,
         open: true,
         cors: true,
+        port: '3000',
         ui: false
     });
 
