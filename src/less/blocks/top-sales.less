@@ -120,3 +120,43 @@
         margin: 57px 0 32px 0;
     }
 }
+
+@media (min-width: @desktop) {
+    .top-sales {
+        .desktop-left();
+    }
+
+    .top-sales__header {
+        display: block;
+        margin-top: 132px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .top-sales__content-text,
+    .top-sales__purchase-block {
+        z-index: 2;
+    }
+
+    .top-sales__promo-text {
+        left: -125px;
+        position: absolute;
+        top: 12px;
+    }
+
+    .top-sales__description {
+        margin: 58px 0 60px;
+    }
+
+    .top-sales__price {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 112px 0 32px 0;
+    }
+
+    .top-sales__image {
+        height: auto;
+        top: -30%;
+        width: 55%;
+    }
+}
