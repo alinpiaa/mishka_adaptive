@@ -139,6 +139,7 @@
         background-image: url('../img/hero-tablet@1x.jpg');
         background-position: center top;
         padding-top: 156px;
+        position: relative;
     }
 
     .products__title {
@@ -176,17 +177,14 @@
     }
 
     .products__bottom-separator {
+        background-image: url('../img/bg-zigzag-fill.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: -3px;
         display: block;
-        position: relative;
-        text-align: center;
-    }
-
-    .products__bottom-separator-icon {
         height: 22px;
-        left: 50%;
-        margin-left: -575px;
         position: absolute;
-        top: -19px;
+        width: 100%;
     }
 
     @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
@@ -204,6 +202,11 @@
 
     .products__title {
         margin: 0 0 354px 0;
+    }
+
+    .products__bottom-separator {
+        bottom: -15px;
+        height: 34px;
     }
 
     @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
