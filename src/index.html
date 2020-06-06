@@ -218,12 +218,21 @@
                             </cite>
                         </blockquote>
                         <p class="reviews__toggles slider__toggles">
-                            <button class="slider__toggle" type="button" aria-label="Предыдущий отзыв">.</button>
-                            <button class="slider__toggle" type="button" aria-label="Следующий отзыв">.</button>
+                            <button class="reviews__toggle slider__toggle" type="button" aria-label="Предыдущий отзыв">
+                                <svg class="reviews__toggle-icon slider__toggle-icon" width="50" height="26">
+                                    <use xlink:href="#icon-left-arrow"></use>
+                                </svg>
+                            </button>
+                            <button class="reviews__toggle slider__toggle" type="button" aria-label="Следующий отзыв">
+                                <svg class="reviews__toggle-icon slider__toggle-icon" width="50" height="26">
+                                    <use xlink:href="#icon-right-arrow"></use>
+                                </svg>
+                            </button>
                         </p>
                     </div>
                     <a href="#" class="review__write-link button">Написать</a>
                 </section>
+                <div class="zigzag-separator"></div>
                 <section class="contacts">
                     <header class="contacts__header">
                         <h2 class="contacts__title section-title">
