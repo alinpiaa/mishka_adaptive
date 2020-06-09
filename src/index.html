@@ -234,27 +234,36 @@
                 </section>
                 <div class="zigzag-separator"></div>
                 <section class="contacts">
-                    <header class="contacts__header">
-                        <h2 class="contacts__title section-title">
-                            Контакты
-                        </h2>
-                    </header>
-                    <table class="contacts__table">
-                        <tr сlass="contacts__table-item">
-                            <th сlass="contacts__table-item-name">e-mail</th>
-                            <td сlass="top-sales__spec-value">info@mimimishkashop.ru</td>
-                        </tr>
-                        <tr сlass="contacts__table-item">
-                            <th сlass="contacts__table-item-name">адрес</th>
-                            <td сlass="contacts__table-item-value">
-                                г. Санкт-Петербург,<br>
-                                ул. Большая Конюшенная,<br> 
-                                д. 19/8, офис 101
-                            </td>
-                        </tr>
-                    </table>
-                    <div class="contacts__map">
-                        <!-- Здесь будет карта -->
+                    <div class="contacts__text-content">
+                        <header class="contacts__header">
+                            <h2 class="contacts__title section-title">
+                                Контакты
+                            </h2>
+                        </header>
+                        <table class="contacts__table">
+                            <tr сlass="contacts__table-item">
+                                <th сlass="contacts__table-item-name">e-mail:</th>
+                                <td сlass="contacts__table-item-value">
+                                    <a
+                                        href="mailto:info@mimimishkashop.ru"
+                                        class="contacts__table-item-link"
+                                    >
+                                        info@mimimishkashop.ru
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr сlass="contacts__table-item">
+                                <th сlass="contacts__table-item-name">адрес:</th>
+                                <td сlass="contacts__table-item-value">
+                                    г. Санкт-Петербург,<br>
+                                    ул. Большая Конюшенная,<br> 
+                                    д. 19/8, офис 101
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="map" class="contacts__map contacts__map_js contacts__map_hidden"></div>
+                    <div class="contacts__map contacts__map_no-js">
                         <picture>
                             <source type="image/webp" media="(min-width: 1150px)" srcset="img/webp/map-desktop@1x.webp 1x, img/webp/map-desktop@2x.webp 2x">
                             <source type="image/webp" media="(min-width: 768px)" srcset="img/webp/map-tablet@1x.webp 1x, img/webp/map-tablet@2x.webp 2x">
@@ -267,10 +276,17 @@
                                 srcset="img/map-mobile@2x.jpg 2x"
                             >
                         </picture>
+                        <div class="contacts__map-icon-pin">
+                            <svg width="67" height="100">
+                                <use xlink:href="#icon-map-pin"></use>
+                            </svg>
+                        </div>
                     </div>
-                    <a href="#" class="contacts__write-to-us button">
-                        Напишите нам
-                    </a>
+                    <div class="contacts__links">
+                        <a href="mailto:info@mimimishkashop.ru" class="contacts__write-to-us button">
+                            Напишите нам
+                        </a>
+                    </div>
                 </section>
             </main>
             <footer class="footer">
@@ -331,6 +347,7 @@
                 <button class="modal__submit-btn button" type="submit">Добавить</button>
             </form>
         </section>
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8249413f-b541-48a8-ab77-b01e26a3b804" type="text/javascript"></script>
         <script src="js/script.min.js"></script>
     </body>
 </html>
