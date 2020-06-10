@@ -1,5 +1,5 @@
 .header__menu-item {
-    border: 1px solid @row-item-border-color;
+    border-bottom: 1px solid @row-item-border-color;
     box-sizing: border-box;
     display: flex;
     height: 79px;
@@ -8,9 +8,16 @@
     position: relative;
 
     .inner();
-}
 
-// TODO: consider to move to separate file for block logo
+    @media (min-width: @tablet) {
+        border: none;
+        height: 100%;
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        width: 305px;
+    }
+}
 
 .header__logo {
     &:hover {
