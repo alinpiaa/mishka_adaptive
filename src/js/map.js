@@ -4,12 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
     
     var hiddenClass = 'contacts__map_hidden';
   
+    if (mapJS) {
+        try {
+            ymaps.ready(init); // eslint-disable-line no-undef
+        } catch (e) {
+            console.error('Yandex maps script is not connected.');
+            return;
+        }
+    }
+
     mapJS.classList.remove(hiddenClass);
     mapStatic.classList.add(hiddenClass);
-  
-    if (mapJS) {
-        ymaps.ready(init); // eslint-disable-line no-undef
-    }
   
     var map;
   
