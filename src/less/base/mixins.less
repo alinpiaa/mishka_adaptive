@@ -1,15 +1,35 @@
+// TODO: migrate in all blocks
+// .inner {
+//     padding-left: 30px;
+//     padding-right: 30px;
+
+//     @media (min-width: @tablet) {
+//         padding-left: 50px;
+//         padding-right: 50px;
+//     }
+
+//     @media (min-width: @desktop) {
+//         padding-left: 100px;
+//         padding-right: 100px;
+//     }
+// }
+
 .inner {
+    box-sizing: border-box;
+    margin: 0 auto;
     padding-left: 30px;
     padding-right: 30px;
 
     @media (min-width: @tablet) {
         padding-left: 50px;
         padding-right: 50px;
+        width: 100%;
     }
 
     @media (min-width: @desktop) {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+        width: 1150px;
     }
 }
 

@@ -51,11 +51,11 @@
     }
 }
 
-.menu__list-new {
+.menu__list_new {
     display: none;
 }
 
-.menu__list-delivery {
+.menu__list_delivery {
     display: none;
 }
 
@@ -97,7 +97,8 @@
         display: flex;
         flex-wrap: wrap;
         height: 88px;
-        .inner();
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .menu__item {
@@ -112,7 +113,7 @@
         z-index: 2;
     }
 
-    .menu__list-delivery {
+    .menu__list_delivery {
         display: flex;
         margin-left: auto;
         order: 3;
@@ -135,7 +136,7 @@
         }
     }
 
-    .menu__list-catalog {
+    .menu__list_catalog {
         display: flex;
         order: 2;
         width: 400px;
@@ -151,9 +152,8 @@
         }
     }
 
-    .menu__list-actions {
+    .menu__list_actions {
         display: flex;
-        flex-grow: 1;
     }
 
     .menu__item_search {
@@ -163,6 +163,7 @@
         display: flex;
         padding-left: 33px;
         padding-right: 49px;
+        width: auto;
 
         .menu__link { // stylelint-disable-line no-descending-specificity
             padding-left: 0;
@@ -191,7 +192,70 @@
 }
 
 @media (min-width: @desktop) {
-    .menu__list-new {
-        display: block;
+    .menu {
+        border-bottom: none;
+        height: 88px;
+        padding: 0;
+    }
+
+    .menu__list_new {
+        display: flex;
+        order: 3;
+
+        .menu__item {
+            padding: 20px 0;
+            width: 225px;
+        }
+
+        .menu__link {
+            font-size: 15px;
+            line-height: 24px;
+            padding-left: 0;
+        }
+    }
+
+    .menu__list_catalog {
+        height: 100%;
+        order: -1;
+        width: auto;
+
+        .menu__item {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            height: 100%;
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        .menu__item.menu__item_catalog {
+            border-right: 1px solid @row-item-border-color;
+            padding-right: 37px;
+            width: 189px;
+        }
+
+        .menu__item.menu__item_order {
+            min-width: 157px;
+            padding-left: 36px;
+            padding-right: 63px;
+            width: 257px;
+        }
+
+        .menu__link {
+            font-size: 17px;
+            line-height: 24px;
+        }
+    }
+
+    .menu__item_cart {
+        margin: 0;
+        width: auto;
+    }
+
+    .menu__list_delivery {
+        .menu__item {
+            padding: 20px 0;
+            width: auto;
+        }
     }
 }
