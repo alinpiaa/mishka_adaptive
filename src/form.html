@@ -13,31 +13,64 @@
             <include src="./build/img/sprite.svg"></include>
         </div>
         <header class="header">
-            <nav class="header__menu menu">
-                <a class="header__logo" href="index.html">
-                    <picture>
-                        <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
-                        <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-                        <img class="logo__image" src="img/logo-mobile.svg" alt="Мишка.">
-                    </picture>
-                </a>
-                <button class="menu__btn" type="button" aria-label="Открыть или закрыть меню"></button>
-                <ul class="menu__list menu__list_catalog">
-                    <li class="menu__item"><a href="catalog.html">Каталог товаров</a></li>
-                    <li class="menu__item"><a>Вязание на заказ</a></li>
-                </ul>
-                <ul class="menu__list menu__list_actions">
-                    <li class="menu__item"><a href="#">Поиск по сайту</a></li>
-                    <li class="menu__item"><a href="#">Корзина: пока пуста</a></li>
-                </ul>
-                <ul class="menu__list menu__list_new">
-                    <li class="menu__item"><a href="#">Новые поступления</a></li>
-                    <li class="menu__item"><a href="#">Распродажа</a></li>
-                </ul>
-                <ul class="menu__list menu__list_delivery">
-                    <li class="menu__item"><a href="#">Бесплатная доставка по России</a></li>
-                </ul>
-            </nav>
+            <div class="header__inner">
+                <nav class="header__menu menu menu_no-js">
+                    <div class="header__menu-item">
+                        <a class="header__logo logo" href="index.html">
+                            <picture>
+                                <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+                                <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+                                <img class="logo__image" src="img/logo-mobile.svg" alt="Мишка.">
+                            </picture>
+                        </a>
+                        <button class="menu__btn" type="button" aria-label="Открыть или закрыть меню"></button>
+                    </div>
+                    <ul class="menu__list menu__list_catalog">
+                        <li class="menu__item menu__item_catalog">
+                            <a class="menu__link" href="catalog.html">
+                                <span class="menu__link-text">Каталог товаров</span>
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item_order">
+                            <a class="menu__link" href="#">
+                                <span class="menu__link-text">Вязание на заказ</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="menu__list menu__list_actions">
+                        <li class="menu__item menu__item_search">
+                            <a class="menu__link" href="#">
+                                <svg class="menu__item-icon" width="18" height="18">
+                                    <use xlink:href="#icon-search"></use>
+                                </svg>
+                                <span class="menu__link-text menu__link-text_optional">Поиск по сайту</span>
+                            </a></li>
+                        <li class="menu__item menu__item_cart">
+                            <a class="menu__link" href="#">
+                                <svg class="menu__item-icon" width="20" height="19">
+                                    <use xlink:href="#icon-cart"></use>
+                                </svg>
+                                <span class="menu__link-text">Корзина: пока пуста</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="menu__list menu__list_new">
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">
+                                <span class="menu__link-text">Новые поступления</span>
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#">
+                                <span class="menu__link-text">Распродажа</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="menu__list menu__list_delivery">
+                        <li class="menu__item"><a class="menu__link" href="#">Бесплатная доставка по России</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main class="main">
             <header class="main__header">
