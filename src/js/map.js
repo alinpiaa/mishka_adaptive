@@ -1,16 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
     var mapJS = document.querySelector('#map');
-    var mapStatic = document.querySelector('.contacts__map_no-js');
-    
+
+    if (!mapJS) {
+        console.error('A container for Yandex Maps was not attached.');
+
+        return;
+    }
+
+    var mapStatic = document.querySelector('.contacts__map_no-js');    
     var hiddenClass = 'contacts__map_hidden';
   
-    if (mapJS) {
-        try {
-            ymaps.ready(init); // eslint-disable-line no-undef
-        } catch (e) {
-            console.error('Yandex maps script is not connected.');
-            return;
-        }
+    try {
+        ymaps.ready(init); // eslint-disable-line no-undef
+    } catch (e) {
+        console.error('Yandex Maps script is not connected.');
+        
+        return;
     }
 
     mapJS.classList.remove(hiddenClass);

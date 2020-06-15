@@ -124,17 +124,14 @@
     @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
         .reviews {
             background-image: url('../img/review@2x.jpg');
-            // background-size: cover;
         }
     }
 }
 
 @media (min-width: @desktop) {
     .reviews {
-        .desktop-left();
-
-        padding-bottom: 95px;
-        padding-top: 73px;
+        padding: 73px 0 95px 168px;
+        width: 1050px;
     }
 
     .reviews__item-text {
