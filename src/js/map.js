@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var mapJS = document.querySelector('#map');
 
     if (!mapJS) {
-        console.error('A container for Yandex Maps was not attached.');
-
         return;
     }
 
