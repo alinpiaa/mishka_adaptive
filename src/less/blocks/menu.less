@@ -71,6 +71,13 @@
     right: 30px;
 }
 
+.menu .menu__btn {
+    background-image: url('../img/icon-menu-open.svg');
+    height: 14px;
+    top: 31px;
+    width: 19px;
+}
+
 .menu_opened .menu__btn {
     background-image: url('../img/icon-menu-close.svg');
     height: 20px;
@@ -78,15 +85,12 @@
     width: 20px;
 }
 
-.menu_closed .menu__btn {
-    background-image: url('../img/icon-menu-open.svg');
-    height: 14px;
-    top: 31px;
-    width: 19px;
+.menu_no-js .menu__btn {
+    display: none;
 }
 
 @media (max-width: @mobile) {
-    .menu_closed .menu__list {
+    .menu:not(.menu_opened):not(.menu_no-js) .menu__list {
         display: none;
     }
 }
