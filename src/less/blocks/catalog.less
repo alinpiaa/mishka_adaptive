@@ -122,7 +122,11 @@
     }
 
     .catalog__item-link {
+        display: block;
+
         &:hover {
+            box-shadow: @catalog-item-hover-shadow-vertical;
+
             .catalog__item-title {
                 opacity: 1;
             }
@@ -130,11 +134,17 @@
             .catalog__item-icon {
                 fill: @icon-accent;
                 opacity: 1;
+            }
+
+            .catalog__item-text {
+                box-shadow: none;
             }
         }
 
         &:focus,
         &:active {
+            box-shadow: @catalog-item-active-shadow-vertical;
+
             .catalog__item-title {
                 opacity: 1;
             }
@@ -142,6 +152,10 @@
             .catalog__item-icon {
                 fill: @icon-accent;
                 opacity: 1;
+            }
+
+            .catalog__item-text {
+                box-shadow: none;
             }
         }
     }
@@ -266,6 +280,7 @@
 
     .catalog__item-image {
         height: 334px;
+        min-width: 334px;
         width: 334px;
     }
 
@@ -286,18 +301,23 @@
         }
 
         .catalog__item-link {
+            display: flex;
             flex-direction: column;
 
             &:hover {
+                box-shadow: @catalog-item-hover-shadow-vertical;
+
                 .catalog__item-text {
-                    box-shadow: @catalog-item-hover-shadow-vertical;
+                    box-shadow: none;
                 }
             }
 
             &:focus,
             &:active {
+                box-shadow: @catalog-item-active-shadow-vertical;
+
                 .catalog__item-text {
-                    box-shadow: @catalog-item-active-shadow-vertical;
+                    box-shadow: none;
                 }
             }
         }
@@ -318,6 +338,10 @@
         }
     }
 
+    .catalog__item-icon-video {
+        left: 43px;
+    }
+
     .catalog__item-purchase {
         border-top: 1px solid @row-item-border-color;
         padding-top: 21px;
@@ -325,14 +349,119 @@
 
     .catalog__item-price {
         font-size: 17px;
-        font-weight: normal;
         line-height: 24px;
     }
 }
 
 @media (min-width: @desktop) {
-    .catalog__item-image {
+    .catalog {
+        margin-bottom: 105px;
+    }
+
+    .catalog__header {
+        margin-bottom: 132px;
+    }
+
+    .catalog__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .catalog__item {
+        width: 316px;
+
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+
+        &:nth-of-type(3) {
+            .catalog__item-description {
+                padding-bottom: 12.5px;
+            }
+        }
+    }
+
+    .catalog__item-description { // stylelint-disable-line no-descending-specificity
+        padding-bottom: 37px;
+    }
+
+    .catalog__item-link {
+        flex-direction: column;
+
+        &:hover {
+            .catalog__item-text {
+                box-shadow: @catalog-item-hover-shadow-vertical;
+            }
+
+            &:focus,
+            &:active {
+                .catalog__item-text {
+                    box-shadow: @catalog-item-active-shadow-vertical;
+                }
+            }
+        }
+    }
+
+    .catalog__item_video {
+        margin-top: 57px;
+        width: 100%;
+
+        .catalog__item-title {
+            float: right;
+            padding: 97px 57px 35px 0;
+            width: 229px;
+        }
+
+        .catalog__item-text { // stylelint-disable-line no-descending-specificity
+            padding: 0 57px 55px 80px;
+        }
+
+        .catalog__item-link { // stylelint-disable-line no-descending-specificity
+            display: block;
+
+            &:hover {
+                box-shadow: @catalog-item-hover-shadow-horizontal;
+
+                .catalog__item-text {
+                    box-shadow: none;
+                }
+            }
+
+            &:focus,
+            &:active {
+                box-shadow: @catalog-item-active-shadow-horizontal;
+
+                .catalog__item-text {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .catalog__item-description { // stylelint-disable-line no-descending-specificity
+            margin-bottom: 49px;
+        }
+
+        .catalog__item-image {
+            height: 455px;
+            min-width: 682px;
+            width: 682px;
+        }
+    }
+
+    .catalog__item-icon-video {
+        left: 2px;
+        top: 57px;
+    }
+
+    .catalog__item-video-container {
+        float: left;
+    }
+
+    .catalog__item-image { // stylelint-disable-line no-descending-specificity
         height: 462px;
+        min-width: 316px;
         width: 316px;
     }
 }
