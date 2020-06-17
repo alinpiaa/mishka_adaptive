@@ -1,0 +1,261 @@
+@field-separator-color: #62d1ba;
+@radio-checkmark-color: #62d1ba;
+
+.order__header {
+    background-color: @gray-light;
+    margin-bottom: 25px;
+    padding: 51px 0;
+}
+
+.order__header-separator {
+    display: none;
+}
+
+.order__content {
+    .inner();
+}
+
+.order__text {
+    font-size: 13px;
+    line-height: 24px;
+    color: @text-small;
+    margin-top: 0;
+}
+
+.order__field {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 17px;
+        line-height: 18px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.order__field_radio {
+    label {
+        position: relative;
+        padding-left: 63px;
+        margin-bottom: 28px;
+        width: 200px;
+
+        &:last-of-type {
+            margin-bottom: 44px;
+        }
+
+        &::before {
+            content: '';
+            width: 36px;
+            height: 36px;
+            border: 2px solid @gray-dark;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: -10px;
+        }
+    }
+
+    .order__input {
+        &:hover + label::before {
+            border-color: @radio-checkmark-color;
+        }
+
+        &:focus + label::before,
+        &:active + label::before {
+            border-color: @gray-dark;
+            opacity: @active-opacity;
+        }
+    }
+
+    .order__input:checked + label::after {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-color: @radio-checkmark-color;
+            border-radius: 50%;
+            position: absolute;
+            left: 12px;
+            top: 2px;
+    }
+}
+
+.order__field_checkbox {
+    label {
+        padding-left: 63px;
+        margin-bottom: 45px;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 36px;
+            height: 36px;
+            border: 2px solid @gray-dark;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            left: 0;
+        }
+    }
+
+    .order__input:hover + label::before {
+        border-color: @radio-checkmark-color;
+    }
+
+    .order__input:active + label::before {
+        border-color: @gray-dark;
+        opacity: @active-opacity;
+    }
+
+    .order__input:checked + label {
+        &::after {
+            content: '';
+            width: 22px;
+            height: 16px;
+            background-image: url('../img/icon-tick-mobile.svg');
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 11px;
+            top: 2  px;
+        }
+    }
+}
+
+.order__field-title {
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 16px;
+    color: @text-accent;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 36px;
+
+    &::after {
+        content: '';
+        height: 1px;
+        background-color: @field-separator-color;
+        width: 100%;
+        display: block;
+        margin-left: 26px;
+    }
+}
+
+.order__field_text-id {
+    .order__field-title {
+        margin-bottom: 30px;
+    }
+
+    .order__input {
+        font-size: 17px;
+        line-height: 18px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid @black;
+        color: @text-small;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 23px 0 19px;
+        outline: none;
+        margin-bottom: 24px;
+
+        &:last-of-type {
+            margin-bottom: 34px;
+        }
+
+        &::placeholder {
+            color: @text-small; 
+            opacity: @active-opacity;
+        }
+
+        &:-ms-input-placeholder { // had to add it manually for IE11, autoprefix does it wrong in this case
+            color: #444444;
+            opacity: 0.1;
+        }
+
+        &:hover {
+            border-color: @field-separator-color;
+        }
+
+        &:focus,
+        &:active {
+            border-color: @field-separator-color;
+
+            &::placeholder {
+                color: transparent;
+            }
+        }
+    }
+}
+
+// .order__field_text-id .order__input:-ms-input-placeholder{color:red;opacity:.3}
+
+
+.order__input_id::placeholder {
+    color: red;
+}
+
+@media (min-width: @tablet) {
+    .order__header {
+        margin-bottom: 79px;
+        padding: 53px 0;
+        position: relative;
+    }
+
+    .order__header-separator {
+        background-image: url('../img/bg-zigzag-fill.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        bottom: -12px;
+        display: block;
+        height: 22px;
+        position: absolute;
+        width: 100%;
+    }
+
+    .order__text {
+        font-size: 17px;
+        line-height: 30px;
+    }
+    
+    .order__field-title {
+        &::after { 
+            display: none;
+        }
+    }
+
+    .order__field {
+        label {
+            font-size: 19px;
+            line-height: 18px;
+        }
+    }
+
+    .order__field_radio {
+        label {
+            width: auto;
+        }
+    }
+}
+
+@media (min-width: @desktop) {
+    .order__header {
+        margin-bottom: 132px;
+    }
+
+    .order__header-separator {
+        height: 34px;
+        bottom: -20px;
+    }
+
+    .order__content {
+        padding: 0;
+    }
+}
