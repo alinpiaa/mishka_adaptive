@@ -16,32 +16,38 @@
 }
 
 .order__text {
+    color: @text-small;
     font-size: 13px;
     line-height: 24px;
-    color: @text-small;
     margin-top: 0;
 }
 
 .order__field {
     border: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 
     label {
-        font-size: 17px;
-        line-height: 18px;
-        font-weight: bold;
         cursor: pointer;
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 18px;
     }
+}
+
+.order__input {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+
+    .input-placeholder();
 }
 
 .order__field_radio {
     label {
-        position: relative;
-        padding-left: 63px;
         margin-bottom: 28px;
+        padding-left: 63px;
+        position: relative;
         width: 200px;
 
         &:last-of-type {
@@ -49,14 +55,14 @@
         }
 
         &::before {
-            content: '';
-            width: 36px;
-            height: 36px;
             border: 2px solid @gray-dark;
             border-radius: 50%;
-            position: absolute;
+            content: '';
+            height: 36px;
             left: 0;
+            position: absolute;
             top: -10px;
+            width: 36px;
         }
     }
 
@@ -73,32 +79,32 @@
     }
 
     .order__input:checked + label::after {
-            content: '';
-            width: 16px;
-            height: 16px;
-            background-color: @radio-checkmark-color;
-            border-radius: 50%;
-            position: absolute;
-            left: 12px;
-            top: 2px;
+        background-color: @radio-checkmark-color;
+        border-radius: 50%;
+        content: '';
+        height: 16px;
+        left: 12px;
+        position: absolute;
+        top: 2px;
+        width: 16px;
     }
 }
 
 .order__field_checkbox {
-    label {
-        padding-left: 63px;
+    label { // stylelint-disable-line no-descending-specificity
         margin-bottom: 45px;
+        padding-left: 63px;
         position: relative;
 
-        &::before {
-            content: '';
-            width: 36px;
-            height: 36px;
+        &::before { // stylelint-disable-line no-descending-specificity
             border: 2px solid @gray-dark;
+            content: '';
+            height: 36px;
+            left: 0;
+            margin-top: -20px;
             position: absolute;
             top: 50%;
-            margin-top: -20px;
-            left: 0;
+            width: 36px;
         }
     }
 
@@ -113,38 +119,48 @@
 
     .order__input:checked + label {
         &::after {
-            content: '';
-            width: 22px;
-            height: 16px;
             background-image: url('../img/icon-tick-mobile.svg');
             background-repeat: no-repeat;
-            position: absolute;
+            content: '';
+            height: 16px;
             left: 11px;
+            position: absolute;
             top: 2  px;
+            width: 22px;
         }
     }
 }
 
 .order__field-title {
-    text-transform: uppercase;
-    font-size: 17px;
-    line-height: 16px;
-    color: @text-accent;
-    font-weight: bold;
-    padding: 0;
-    display: flex;
     align-items: center;
-    width: 100%;
+    color: @text-accent;
+    display: flex;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 16px;
     margin-bottom: 36px;
+    padding: 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
 
     &::after {
-        content: '';
-        height: 1px;
         background-color: @field-separator-color;
-        width: 100%;
+        content: '';
         display: block;
+        height: 1px;
         margin-left: 26px;
+        width: 100%;
     }
+}
+
+.order__field-tel-icon,
+.order__field-mail-icon {
+    fill: @icon-default;
+    opacity: @icon-default-opacity;
+    position: absolute;
+    right: 8px;
+    top: 39px;
 }
 
 .order__field_text-id {
@@ -153,53 +169,105 @@
     }
 
     .order__input {
-        font-size: 17px;
-        line-height: 18px;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 2px solid @black;
-        color: @text-small;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 23px 0 19px;
-        outline: none;
+        .input-text();
+
         margin-bottom: 24px;
+        padding: 23px 0 19px;
 
         &:last-of-type {
             margin-bottom: 34px;
         }
+    }
+}
 
-        &::placeholder {
-            color: @text-small; 
-            opacity: @active-opacity;
+.order__field_tel {
+    position: relative;
+
+    .order__field-title {
+        margin-bottom: 0;
+    }
+
+    .order__input { // stylelint-disable-line no-descending-specificity
+        .input-text();
+
+        margin-bottom: 34px;
+        padding: 28px 0 19px;
+
+        &:hover + .order__field-tel-icon {
+            fill: @icon-accent;
+            opacity: 1;
         }
 
-        &:-ms-input-placeholder { // had to add it manually for IE11, autoprefix does it wrong in this case
-            color: #444444;
-            opacity: 0.1;
-        }
-
-        &:hover {
-            border-color: @field-separator-color;
-        }
-
-        &:focus,
-        &:active {
-            border-color: @field-separator-color;
-
-            &::placeholder {
-                color: transparent;
-            }
+        &:focus + .order__field-tel-icon,
+        &:active + .order__field-tel-icon {
+            fill: @icon-accent;
+            opacity: 1;
         }
     }
 }
 
-// .order__field_text-id .order__input:-ms-input-placeholder{color:red;opacity:.3}
+.order__field_email {
+    position: relative;
 
+    .order__field-title {
+        margin-bottom: 0;
+    }
 
-.order__input_id::placeholder {
-    color: red;
+    .order__input { // stylelint-disable-line no-descending-specificity
+        .input-text();
+
+        margin-bottom: 34px;
+        padding: 28px 0 19px;
+
+        &:hover + .order__field-mail-icon {
+            fill: @icon-accent;
+            opacity: 1;
+        }
+
+        &:focus + .order__field-mail-icon,
+        &:active + .order__field-mail-icon {
+            fill: @icon-accent;
+            opacity: 1;
+        }
+    }
+}
+
+.order__field_textarea {
+    .order__input { // stylelint-disable-line no-descending-specificity
+        border: 2px solid @gray-dark;
+        box-sizing: border-box;
+        color: @text-small;
+        font-size: 17px;
+        height: 142px;
+        line-height: 1.5;
+        outline: none;
+        overflow: auto;
+        padding: 15px;
+        resize: none;
+        width: 100%;
+
+        &:hover {
+            border-color: @field-separator-color;
+        }
+    }
+
+    .order__field-title {
+        margin-bottom: 23px;
+    }
+}
+
+.order__meta-info {
+    color: @text-small;
+    display: block;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 31px;
+    margin-top: 15px;
+}
+
+.order__submit-btn {
+    margin-bottom: 55px;
+    width: 100%;
 }
 
 @media (min-width: @tablet) {
@@ -224,9 +292,9 @@
         font-size: 17px;
         line-height: 30px;
     }
-    
+
     .order__field-title {
-        &::after { 
+        &::after {
             display: none;
         }
     }
@@ -251,8 +319,8 @@
     }
 
     .order__header-separator {
-        height: 34px;
         bottom: -20px;
+        height: 34px;
     }
 
     .order__content {
