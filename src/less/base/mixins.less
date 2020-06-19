@@ -87,6 +87,11 @@
         font-size: 17px;
         line-height: 18px;
         opacity: @active-opacity;
+
+        @media (min-width: @tablet) {
+            font-size: 19px;
+            line-height: 18px;
+        }
     }
 
     &:hover {
@@ -117,4 +122,10 @@
     width: 100%;
 
     .input-placeholder();
+
+    @media (min-width: @tablet) {
+        font-size: 19px;
+        line-height: 18px;
+        padding-left: 18px;
+    }
 }
