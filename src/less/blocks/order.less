@@ -532,6 +532,7 @@
     }
 
     .order__submit-block-inner {
+        align-items: center;
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -540,7 +541,6 @@
 
     .order__meta-info {
         margin: 0;
-        padding-top: 17px;
     }
 
     .order__submit-btn {
@@ -553,7 +553,12 @@
 
 @media (min-width: @desktop) {
     .order__header {
-        margin-bottom: 132px;
+        margin-bottom: 128px;
+    }
+
+    .order__field-title {
+        padding-left: 62px;
+        width: 113px;
     }
 
     .order__header-separator {
@@ -561,10 +566,88 @@
         height: 34px;
     }
 
+    .order__text {
+        .desktop-left();
+
+        padding-right: 225px;
+    }
+
+    .order__field_radio {
+        margin-top: 56px;
+    }
+
     .order__field_checkbox {
+        label {
+            &:nth-last-of-type(-n+3) {
+                margin-bottom: 0;
+            }
+        }
+
+        .order__field-inner-content {
+            max-width: 735px;
+            width: 735px;
+        }
+
         .order__field-inner {
             padding-bottom: 67px;
             padding-top: 67px;
         }
+    }
+
+    .order__field_text-id {
+        .order__field-inner {
+            padding-top: 66px;
+        }
+
+        .order__field-inner-content {
+            max-width: 700px;
+            width: 700px;
+        }
+    }
+
+    .order__field_tel {
+        .order__field-inner {
+            padding-top: 66px;
+        }
+
+        .order__field-inner-content {
+            max-width: 700px;
+            width: 700px;
+        }
+
+        .order__input {
+            margin-bottom: 44px;
+        }
+    }
+
+    .order__field_email {
+        .order__field-inner-content {
+            max-width: 700px;
+            width: 700px;
+        }
+    }
+
+    .order__field_textarea {
+        .order__field-inner-content {
+            max-width: 700px;
+            width: 700px;
+        }
+    }
+
+    .order__submit-block {
+        .desktop-left();
+
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .order__submit-block-inner {
+        max-width: 700px;
+        width: 700px;
+    }
+
+    .order__meta-info {
+        font-size: 17px;
+        line-height: 30px;
     }
 }
