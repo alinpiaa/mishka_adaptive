@@ -249,24 +249,28 @@
                 </div>
             </div>
         </footer>   
-        <section class="add-to-cart modal visually-hidden">
-            <header class="modal__header">
-                <h3 class="modal__title">
-                    Добавить в корзину
-                </h3>
-            </header>
-            <form class="modal__form-sizes">
-                <p class="modal__form-text">
-                    Выберите размер:
-                </p>
-                <input class="modal__input visually-hidden" type="radio" id="size_s" name="size" value="S" checked>
-                <label for="size_s">S</label>
-                <input class="modal__input visually-hidden" type="radio" id="size_m" name="size" value="M">
-                <label for="size_m">M</label>
-                <input class="modal__input visually-hidden" type="radio" id="size_l" name="size" value="L">
-                <label for="size_l">L</label>
-                <button class="modal__submit-btn button" type="submit">Добавить</button>
-            </form>
+        <section class="add-to-cart modal">
+            <div class="modal__content">
+                <header class="modal__header">
+                    <h3 class="modal__title">
+                        Добавить в корзину
+                    </h3>
+                </header>
+                <form class="modal__form modal__form_sizes">
+                    <p class="modal__form-text">
+                        Выберите размер:
+                    </p>
+                    <div class="modal__form-options">
+                        <input class="modal__input visually-hidden" type="radio" id="size_s" name="size" value="S" checked>
+                        <label for="size_s">S</label>
+                        <input class="modal__input visually-hidden" type="radio" id="size_m" name="size" value="M">
+                        <label for="size_m">M</label>
+                        <input class="modal__input visually-hidden" type="radio" id="size_l" name="size" value="L">
+                        <label for="size_l">L</label>
+                    </div>
+                    <button class="modal__submit-btn button" type="submit">Добавить</button>
+                </form>
+            </div>   
         </section>
         <script src="js/script.min.js"></script>
     </body>
