@@ -6,6 +6,8 @@
 
 .modal {
     background-color: @modal-overlay-background-color;
+    cursor: pointer;
+    display: none;
     height: 100%;
     left: 0;
     position: fixed;
@@ -14,11 +16,16 @@
     z-index: 10;
 }
 
+.modal_show {
+    display: block;
+}
+
 .modal__content {
     background-color: @background-default;
     border: 1px solid @modal-border-color;
     box-shadow: @modal-shadow;
     box-sizing: border-box;
+    cursor: default;
     left: 50%;
     opacity: 1;
     padding: 33px 30px 46px 30px;
