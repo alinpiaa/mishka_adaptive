@@ -7,7 +7,6 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const include = require('posthtml-include');
 const less = require('gulp-less');
-const LessAutoprefix = require('less-plugin-autoprefix');
 const plumber = require('gulp-plumber');
 const posthtml = require('gulp-posthtml');
 const rename = require('gulp-rename');
@@ -15,9 +14,10 @@ const sourcemap = require('gulp-sourcemaps');
 const svgstore = require('gulp-svgstore');
 const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
 const server = browserSync.create();
-const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
 function html() {
     return src('src/*.html')
@@ -34,9 +34,10 @@ function css() {
     return src('src/less/style.less')
         .pipe(plumber())
         .pipe(sourcemap.init())
-        .pipe(less({
-            plugins: [autoprefix],
-        }))
+        .pipe(less())
+        .pipe(postcss([
+            autoprefixer(),
+        ]))
         .pipe(csso())
         .pipe(rename('style.min.css'))
         .pipe(sourcemap.write('.'))
