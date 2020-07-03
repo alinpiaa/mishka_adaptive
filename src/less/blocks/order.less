@@ -19,6 +19,7 @@
     color: @text-small;
     font-size: 13px;
     line-height: 24px;
+    margin-bottom: 25px;
     margin-top: 0;
 }
 
@@ -40,6 +41,11 @@
     flex-direction: column;
 }
 
+.order__field-title-wrapper {
+    align-items: center;
+    display: flex;
+}
+
 .order__field-inner-content {
     display: flex;
     flex-direction: column;
@@ -52,6 +58,10 @@
 }
 
 .order__field_radio {
+    .order__field-title-wrapper {
+        margin-bottom: 33px;
+    }
+
     label {
         margin-bottom: 28px;
         padding-left: 63px;
@@ -107,6 +117,10 @@
 }
 
 .order__field_checkbox {
+    .order__field-title-wrapper {
+        margin-bottom: 33px;
+    }
+
     label { // stylelint-disable-line no-descending-specificity
         margin-bottom: 45px;
         padding-left: 63px;
@@ -156,27 +170,22 @@
     }
 }
 
+.order__field-title-line {
+    background-color: @field-separator-color;
+    height: 1px;
+    margin-left: 26px;
+    width: 100%;
+}
+
 .order__field-title {
-    align-items: center;
     color: @text-accent;
     display: flex;
     font-size: 17px;
     font-weight: bold;
     line-height: 16px;
-    margin-bottom: 36px;
     padding: 0;
     text-transform: uppercase;
     white-space: nowrap;
-    width: 100%;
-
-    &::after {
-        background-color: @field-separator-color;
-        content: '';
-        display: block;
-        height: 1px;
-        margin-left: 26px;
-        width: 100%;
-    }
 }
 
 .order__field-tel-icon,
@@ -189,7 +198,7 @@
 }
 
 .order__field_text-id {
-    .order__field-title {
+    .order__field-title-wrapper {
         margin-bottom: 30px;
     }
 
@@ -280,7 +289,7 @@
         }
     }
 
-    .order__field-title {
+    .order__field-title-wrapper {
         margin-bottom: 23px;
     }
 }
@@ -328,12 +337,20 @@
         .inner();
     }
 
+    .order__field-title-wrapper {
+        margin-bottom: 0;
+    }
+
     .order__text {
         font-size: 17px;
         line-height: 30px;
         margin-bottom: 74px;
 
         .inner();
+    }
+
+    .order__field-title-line {
+        display: none;
     }
 
     .order__field-title {
@@ -359,6 +376,10 @@
 
     .order__field_radio {
         margin-top: 59px;
+
+        .order__field-title-wrapper {
+            margin-bottom: 0;
+        }
 
         label { // stylelint-disable-line no-descending-specificity
             padding-left: 81px;
@@ -406,6 +427,10 @@
             flex-wrap: wrap;
             max-width: 728px;
             width: 490px;
+        }
+
+        .order__field-title-wrapper {
+            margin-bottom: 0;
         }
 
         label { // stylelint-disable-line no-descending-specificity
