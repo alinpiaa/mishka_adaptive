@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var mapJS = document.querySelector('#map');
+    var isTouchDevice = 'ontouchstart' in document.documentElement;
 
     if (!mapJS) {
         return;
@@ -35,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         map.geoObjects.add(placemark);
+
+        if (isTouchDevice) {
+            map.behaviors.enable('multiTouch');
+            map.behaviors.disable(['drag', 'scrollZoom']);
+        }       
     }
 });
-  
