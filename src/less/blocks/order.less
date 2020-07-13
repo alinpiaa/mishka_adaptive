@@ -194,7 +194,7 @@
     opacity: @icon-default-opacity;
     position: absolute;
     right: 8px;
-    top: 21px;
+    top: -4px;
 }
 
 .order__field_text-id {
@@ -219,6 +219,10 @@
         position: relative;
     }
 
+    .order__field-title-wrapper {
+        margin-bottom: 28px;
+    }
+
     .order__field-title {
         margin-bottom: 0;
     }
@@ -227,7 +231,7 @@
         .input-text();
 
         margin-bottom: 34px;
-        padding: 28px 0 19px;
+        padding: 0 43px 19px 0;
 
         &:hover + .order__field-tel-icon {
             fill: @icon-accent;
@@ -251,11 +255,15 @@
         margin-bottom: 0;
     }
 
+    .order__field-title-wrapper {
+        margin-bottom: 28px;
+    }
+
     .order__input { // stylelint-disable-line no-descending-specificity
         .input-text();
 
         margin-bottom: 34px;
-        padding: 28px 0 19px;
+        padding: 0 50px 19px 0;
 
         &:hover + .order__field-mail-icon {
             fill: @icon-accent;
@@ -508,6 +516,10 @@
             width: 501px;
         }
 
+        .order__field-title-wrapper {
+            margin-bottom: 0;
+        }
+
         .order__field-title {
             padding-top: 6px;
         }
@@ -532,6 +544,10 @@
             flex-grow: 1;
             max-width: 570px;
             width: 501px;
+        }
+
+        .order__field-title-wrapper {
+            margin-bottom: 0;
         }
 
         .order__field-title {
