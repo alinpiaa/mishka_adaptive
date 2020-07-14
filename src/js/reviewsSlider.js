@@ -8,26 +8,48 @@ var currentItemNumber = 0;
 
 function toggleNextHandler() {
     if (currentItemNumber < reviewsListLength - 1) {
-        hideItem(reviewsList[currentItemNumber]);
-        currentItemNumber++;
-        showItem(reviewsList[currentItemNumber]);
+        changeItem(reviewsList[currentItemNumber], reviewsList[++currentItemNumber]);
     }
 }
 
 function toggleBackHandler() {
     if (currentItemNumber > 0) {
-        hideItem(reviewsList[currentItemNumber]);
-        currentItemNumber--;
-        showItem(reviewsList[currentItemNumber]);
+        changeItem(reviewsList[currentItemNumber], reviewsList[--currentItemNumber]);
     }
 }
 
-function showItem(item) {
-    item.classList.add(shownItemClass);
-}
+function changeItem(prevItem, nextItem) {
+    var prevOpacity = 1;
+    var nextOpacity = 0;
 
-function hideItem(item) {
-    item.classList.remove(shownItemClass);
+    var timer = setInterval(function() {
+        if (prevOpacity > 0) {
+            prevOpacity = +(prevOpacity - 0.07).toFixed(2);
+            prevItem.style.opacity = prevOpacity;
+        }
+
+        if (prevOpacity <= 0) {
+            prevOpacity = 0;
+            prevItem.style.opacity = prevOpacity;
+            prevItem.classList.remove(shownItemClass);
+
+            nextItem.style.opacity = nextOpacity;
+            nextItem.classList.add(shownItemClass);
+
+            if (nextOpacity < 1) {
+                nextOpacity = +(nextOpacity + 0.07).toFixed(2);                
+            }
+
+            if (nextOpacity >= 1) {
+                nextOpacity = 1;
+                nextItem.style.opacity = nextOpacity;
+
+                clearInterval(timer);
+            }
+
+            return;
+        }
+    }, 20);
 }
 
 reviewsToggleNext.addEventListener('click', toggleNextHandler);
