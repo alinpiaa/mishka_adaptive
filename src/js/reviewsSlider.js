@@ -6,16 +6,65 @@ var reviewsList = document.querySelectorAll('.reviews__item');
 var reviewsListLength = reviewsList.length;
 var currentItemNumber = 0;
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    reviewsToggleNext.addEventListener('click', toggleNextHandler);
+    reviewsToggleBack.addEventListener('click', toggleBackHandler);
+
+    checkAndDisableToggles();
+});
+
+function checkAndDisableToggle(shouldEnable, toggle) {
+    if (shouldEnable) {
+        return enableToggle(toggle);
+    }
+
+    disableToggle(toggle);
+}
+
+function checkAndDisableToggles() {
+    var shouldEnableToggleNext = nextItemExists();
+    var shouldEnableToggleBack = prevItemExists();
+
+    checkAndDisableToggle(shouldEnableToggleNext, reviewsToggleNext);
+    checkAndDisableToggle(shouldEnableToggleBack, reviewsToggleBack);
+}
+
+function nextItemExists() {
+    return currentItemNumber < reviewsListLength - 1;
+}
+
+function prevItemExists() {
+    return currentItemNumber > 0;
+}
+
 function toggleNextHandler() {
-    if (currentItemNumber < reviewsListLength - 1) {
-        changeItem(reviewsList[currentItemNumber], reviewsList[++currentItemNumber]);
+    if (nextItemExists()) {
+        currentItemNumber++;
+
+        changeItem(reviewsList[currentItemNumber-1], reviewsList[currentItemNumber]);
+
+        checkAndDisableToggles();
     }
 }
 
 function toggleBackHandler() {
-    if (currentItemNumber > 0) {
-        changeItem(reviewsList[currentItemNumber], reviewsList[--currentItemNumber]);
+    if (prevItemExists()) {
+        currentItemNumber--;
+
+        changeItem(reviewsList[currentItemNumber+1], reviewsList[currentItemNumber]);
+
+        checkAndDisableToggles();
     }
+}
+
+// TODO: use it for blocking appropriate toggles
+function disableToggle(toggle) {
+    toggle.setAttribute('disabled', 'disabled');
+}
+
+function enableToggle(toggle) {
+    toggle.removeAttribute('disabled');
 }
 
 function changeItem(prevItem, nextItem) {
@@ -51,6 +100,3 @@ function changeItem(prevItem, nextItem) {
         }
     }, 20);
 }
-
-reviewsToggleNext.addEventListener('click', toggleNextHandler);
-reviewsToggleBack.addEventListener('click', toggleBackHandler);

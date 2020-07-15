@@ -50,19 +50,29 @@
     flex-grow: 1;
     justify-content: center;
     margin: 0;
+    outline: none;
     padding: 12px 0;
-
-    &:hover {
-        opacity: @hover-opacity;
-    }
-
-    &:focus,
-    &:active {
-        opacity: @active-opacity;
-    }
 
     &:last-of-type {
         border-left: none;
+    }
+
+    &:disabled {
+        .reviews__toggle-icon {
+            opacity: @disabled-opacity;
+        }
+    }
+
+    &:hover:enabled {
+        opacity: @hover-opacity;
+    }
+
+    &:active:enabled {
+        opacity: @active-opacity;
+    }
+
+    &:focus:enabled {
+        outline: 1px solid @row-item-border-color;
     }
 }
 
