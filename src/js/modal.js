@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function () {
+    if (!document.querySelector('.modal')) {
+        return;
+    }
+
+    setListeners();
+});
+
 var addToCartModal = document.querySelector('.modal_add-to-cart');
 var addToCartTriggers = document.querySelectorAll('.modal_add-to-cart-trigger');
 
@@ -59,5 +67,4 @@ function setListeners() {
     setAddToCartListener();
 }
 
-setListeners();
 

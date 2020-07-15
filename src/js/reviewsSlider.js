@@ -1,4 +1,6 @@
 var shownItemClass = 'reviews__item_show';
+
+var slider = document.querySelector('.reviews__slider');
 var reviewsToggles = document.querySelectorAll('.reviews__toggle');
 var reviewsToggleBack = reviewsToggles[0];
 var reviewsToggleNext = reviewsToggles[1];
@@ -6,8 +8,11 @@ var reviewsList = document.querySelectorAll('.reviews__item');
 var reviewsListLength = reviewsList.length;
 var currentItemNumber = 0;
 
-
 document.addEventListener('DOMContentLoaded', function () {
+    if (!slider) {
+        return;
+    }
+
     reviewsToggleNext.addEventListener('click', toggleNextHandler);
     reviewsToggleBack.addEventListener('click', toggleBackHandler);
 
