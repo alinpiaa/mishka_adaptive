@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     catalogOrderButton.addEventListener('click', function() {
-        location.href = 'form.html';
+        window.location.href = 'form.html';
     });
 });
