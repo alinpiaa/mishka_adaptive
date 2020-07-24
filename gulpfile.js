@@ -97,8 +97,8 @@ function fonts() {
         .pipe(dest('build'));
 }
 
-function clean(done) {
-    del('build');
+async function clean(done) {
+    await del('build');
 
     done();
 }
